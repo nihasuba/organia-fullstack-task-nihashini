@@ -1,0 +1,12 @@
+:root{
+   
+    --Primary-500: #FAC03A;
+    --secondary-500: #0E2824;
+    --dark-green-200: #8C9291;
+    --dark-green-500: #061210;
+    --dark-green-100: #B2B6B5;
+    --background: #F4F6F6;
+    --background-color: --gradient-3, linear-gradient(90deg, rgba(94, 111, 108, 0.95) 19.79%, rgba(251, 205, 97, 0.95) 100%),  lightgray 50%;
+    --dark-green-50:#E6E7E7;
+    --primary-50: #FFF9EB;
+}
