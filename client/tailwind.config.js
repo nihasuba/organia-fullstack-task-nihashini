@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        alexandria: ['Alexandria', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       
     },

@@ -4,7 +4,7 @@ import { ListTodo, Clock, CheckCircle2 } from 'lucide-react';
 
 const Home = () => {
   return (
-    <div className="pt-24 min-h-screen bg-white font-alexandria text-slate-900">
+    <div className="pt-24 min-h-screen bg-white  text-slate-900">
       {/* Hero Section */}
       <main className="max-w-6xl mx-auto text-center mt-24 px-6">
         <h1 className="text-6xl md:text-7xl font-extrabold mb-8 leading-tight">
@@ -47,7 +47,7 @@ const Home = () => {
 };
 
 const FeatureCard = ({ icon, title, desc }) => (
-  <div className="p-8 border border-slate-100 rounded-3xl text-left bg-white shadow-sm hover:shadow-md transition-shadow">
+  <div className="p-8 border border-slate-200 rounded-3xl text-left bg-white shadow-md hover:shadow-lg transition-shadow">
     <div className="mb-4">{icon}</div>
     <h3 className="text-xl font-bold mb-2">{title}</h3>
     <p className="text-slate-500 leading-relaxed">{desc}</p>
