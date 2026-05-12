@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'organia-fullstack-task-nihashini-production.up.railway.app';
 
 const getHeaders = () => {
   const token = localStorage.getItem('token');
