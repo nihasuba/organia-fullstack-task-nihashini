@@ -29,11 +29,17 @@ export const API = {
   },
 
   // Task endpoints
-  createTask: async (userId, title, description) => {
+  createTask: async (userId, title, description, status = 'To Do', dueDate) => {
     const response = await fetch(`${API_BASE_URL}/tasks`, {
       method: 'POST',
       headers: getHeaders(),
-      body: JSON.stringify({ userId: Number(userId), title, description, dueDate: new Date().toISOString() }),
+      body: JSON.stringify({ 
+        userId: Number(userId), 
+        title, 
+        description, 
+        status,
+        dueDate: dueDate || new Date().toISOString() 
+      }),
     });
     return response.json();
   },
@@ -45,11 +51,11 @@ export const API = {
     return response.json();
   },
 
-  updateTask: async (id, title, description, isCompleted) => {
+  updateTask: async (id, title, description, status) => {
     const response = await fetch(`${API_BASE_URL}/tasks/${id}`, {
       method: 'PUT',
       headers: getHeaders(),
-      body: JSON.stringify({ title, description, isCompleted }),
+      body: JSON.stringify({ title, description, status }),
     });
     return response.json();
   },

@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Home from "../Pages/Home";
 import { Login, Register } from "../Pages/AuthPage";
 import Navbar from "../Pages/Navbar";
@@ -12,6 +12,7 @@ const ProtectedRoute = ({ children }) => {
 };
 
 const AllRoutes = () => {
+  const location = useLocation();
   const isDashboard = location.pathname.includes("/dashboard");
   
   return (

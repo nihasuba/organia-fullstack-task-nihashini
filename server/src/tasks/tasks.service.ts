@@ -6,14 +6,14 @@ export class TaskService {
   constructor(private prisma: PrismaService) {}
 
   // 1. Create a new task
-  async createTask(userId: string, data: { title: string; description?: string }) {
+  async createTask(userId: string, data: { title: string; description?: string; status?: string; dueDate?: string }) {
     return this.prisma.task.create({
       data: {
         title: data.title,
         description: data.description,
         userId: Number(userId),
-        dueDate: new Date(),
-        status: 'To Do',
+        dueDate: data.dueDate ? new Date(data.dueDate) : new Date(),
+        status: data.status || 'To Do',
       },
     });
   }
@@ -25,7 +25,7 @@ export class TaskService {
     });
   }
 
-  async updateTask(id: string, userId: string, data: { title?: string; description?: string; isCompleted?: boolean }) {
+  async updateTask(id: string, userId: string, data: { title?: string; description?: string; status?: string }) {
     const task = await this.prisma.task.findUnique({ where: { id: Number(id) } });
 
     if (!task || task.userId !== Number(userId)) {
@@ -34,7 +34,11 @@ export class TaskService {
 
     return this.prisma.task.update({
       where: { id: Number(id) },
-      data,
+      data: {
+        ...(data.title && { title: data.title }),
+        ...(data.description !== undefined && { description: data.description }),
+        ...(data.status && { status: data.status }),
+      },
     });
   }
 

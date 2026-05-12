@@ -18,7 +18,7 @@ model User {
   email    String  @unique
   name     String?
   password String
-  tasks    Task[] // ஒரு பயனருக்கு பல டாஸ்க்குகள் இருக்கலாம்
+  tasks    Task[] 
 }
 
 model Task {

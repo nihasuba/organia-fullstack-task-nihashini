@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import AllRoutes from "./routes/AllRoutes";
 
-
 function App() {
   const location = useLocation();
 
@@ -12,9 +11,7 @@ function App() {
 
   return (
     <div className="bg-white">
-     
-      <AllRoutes />
-      
+      <AllRoutes /> 
     </div>
   );
 }

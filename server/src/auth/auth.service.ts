@@ -25,8 +25,11 @@ export class AuthService {
                 password: hashedPassword,
             },
         });
-        const { password, ...userWithoutPassword } = user;
-        return userWithoutPassword;
+        const payload = { sub: user.id, email: user.email };
+        return {
+            access_token: await this.jwtService.signAsync(payload),
+            user: { id: user.id, name: user.name, email: user.email },
+        };
     }
 
     async login(data: any) {
