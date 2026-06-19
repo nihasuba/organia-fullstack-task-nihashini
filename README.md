@@ -102,39 +102,8 @@ npm run dev
 
 ---
 
-# 🔑 API Documentation
 
-## 🔐 Authentication Routes
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/auth/register` | Create a new account |
-| POST | `/auth/login` | Login and receive JWT token |
-
----
-
-## ✅ Task Routes
-
-| GET | `/tasks/:userId` | Get all tasks for a user |
-| POST | `/tasks` | Create a new task |
-| PUT | `/tasks/:id` | Update task details/status |
-| DELETE | `/tasks/:id` | Delete a task |
-
----
-
-# 🧪 Demo Credentials
-
-Use the following credentials to test the application:
-
-```txt
-Email: cst21032@std.uwu.ac.lk
-Password: nihashini09
-```
-
-# 🌐 Live Demo
-
-🚀 Frontend Deployment:  
-https://organia-fullstack-task-nihashini.vercel.app/
 
 ---
 
